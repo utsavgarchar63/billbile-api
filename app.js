@@ -20,7 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/", routes);
 
-console.log(process.env.MONGO_URI, "process.env.MONGO_URI")
 mongoose.connect(process.env.MONGO_URI).then(async () => {
      app.listen(process.env.PORT, () => {
           logger.info(`Server serve with port number: ${process.env.PORT}`);
