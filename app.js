@@ -12,7 +12,7 @@ app.use("/uploads", express.static("uploads"));
 require("dotenv").config();
 app.use(morgan("dev"));
 app.use(cors({
-     origin: ["http://localhost:3000", "https://billbite-admin.vercel.apps"],
+     origin: ["http://localhost:3000", "https://billbite-admin.vercel.app"],
      credentials: true
 }))
 app.use(express.json());
