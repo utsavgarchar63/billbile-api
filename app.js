@@ -12,7 +12,7 @@ app.use("/uploads", express.static("uploads"));
 require("dotenv").config();
 app.use(morgan("dev"));
 app.use(cors({
-     origin: ["http://localhost:3000"],
+     origin: ["http://localhost:3000", "https://billbite-admin.vercel.apps"],
      credentials: true
 }))
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/", routes);
 
-console.log(process.env.MONGO_URI,"process.env.MONGO_URI")
+console.log(process.env.MONGO_URI, "process.env.MONGO_URI")
 mongoose.connect(process.env.MONGO_URI).then(async () => {
      app.listen(process.env.PORT, () => {
           logger.info(`Server serve with port number: ${process.env.PORT}`);
